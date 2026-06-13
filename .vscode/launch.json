@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {            
+            "name": "Debug npm dev",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "cwd": "${workspaceFolder}/problem_5_curde_server",
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\problem_5_curde_server\\src\\index.ts",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ],
+    "scripts": {
+        "build": "tsc && tsc-alias -p tsconfig.json",
+        "start": "node dist/index.js",
+        "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/index.ts",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "db:generate": "prisma generate",
+        "db:push": "prisma db push",
+        "db:migrate": "prisma migrate dev",
+        "db:migrate:deploy": "prisma migrate deploy",
+        "db:baseline": "prisma migrate resolve --applied 20250223000000_init",
+        "db:studio": "prisma studio"
+    }
+}

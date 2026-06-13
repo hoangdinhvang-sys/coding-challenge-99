@@ -1,0 +1,32 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@domain": ["src/domain"],
+      "@domain/*": ["src/domain/*"],
+      "@application": ["src/application"],
+      "@application/*": ["src/application/*"],
+      "@infrastructure": ["src/infrastructure"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@presentation": ["src/presentation"],
+      "@presentation/*": ["src/presentation/*"],
+      "@config": ["src/config"]
+    }
+  }
+}
