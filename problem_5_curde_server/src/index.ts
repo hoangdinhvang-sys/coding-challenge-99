@@ -10,8 +10,6 @@ import { logger } from "@infrastructure/logging/logger";
 import { PrismaResourceRepository } from "@infrastructure/repositories/prisma-resource-respository"
 import { createApp } from "@presentation/http/app";
 
-console.log("DATABASE_URL----------------------------------:", process.env.DATABASE_URL);
-
 const resourceRepository = new PrismaResourceRepository();
 
 const resourceUseCases: ResourceUseCase = {

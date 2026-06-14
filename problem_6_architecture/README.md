@@ -151,8 +151,8 @@ Only `total_score` is required for the core feature; storing score events is use
 ```json
 {
   "entries": [
-    { "rank": 1, "user_id": "u1", "username": "alice", "score": 5000 },
-    { "rank": 2, "user_id": "u2", "username": "bob",   "score": 4800 },
+    { "rank": 1, "username": "alice", "score": 5000 },
+    { "rank": 2, "username": "bob",   "score": 4800 },
     ...
   ],
   "generated_at": "2026-03-02T12:00:00Z"
@@ -170,8 +170,8 @@ Only `total_score` is required for the core feature; storing score events is use
   "type": "LEADERBOARD_UPDATED",
   "payload": {
     "entries": [ 
-        { "rank": 1, "user_id": "u1", "username": "alice", "score": 5000 },
-        { "rank": 2, "user_id": "u2", "username": "bob",   "score": 4800 },
+        { "rank": 1, "username": "alice", "score": 5000 },
+        { "rank": 2, "username": "bob",   "score": 4800 },
         ...
      ]
   }

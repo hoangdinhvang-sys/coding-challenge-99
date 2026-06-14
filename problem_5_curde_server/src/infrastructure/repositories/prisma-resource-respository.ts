@@ -21,10 +21,11 @@ export class PrismaResourceRepository implements ResourceRepository{
         const resource = prisma.resource.update({
             where: {id},
             data:{
-                ...(data.name && {name: data.name}),
-                ...(data.type && {type: data.type}),
-                ...(data.description && {description: data.description}),
-                ...(data.status && {status: data.status})
+                ...(data.name !== undefined && {name: data.name}),
+                ...(data.type !== undefined && {type: data.type}),
+                ...(data.description !== undefined && {description: data.description}),
+                ...(data.status !== undefined && {status: data.status}),
+                ...(data.isDeleted !== undefined && {isDeleted: data.isDeleted})
             }
         }).catch(() => null);
 

@@ -19,9 +19,9 @@ export async function createResource(
 
         const resource = await useCases.createResourceUseCase.execute({
             name: data.name,
-            type: data.type,
             description: data.description,
-            status: data.status
+            status: data.status,
+            isDeleted: false
         });
 
         resCreated(res, resource);
@@ -109,9 +109,10 @@ export async function updateResource(
 
         const resource = await useCases.updateResourceUseCase.execute(params.id, {
             ...(body.name !== undefined && { name: body.name} ),
-            ...(body.description != undefined && {description: body.description}),
-            ...(body.type != undefined && {type: body.type}),
-            ...(body.status != undefined && {status: body.status})
+            ...(body.description !== undefined && {description: body.description}),
+            ...(body.type !== undefined && {type: body.type}),
+            ...(body.status !== undefined && {status: body.status}),
+            ...(body.isDeleted !== undefined && {isDeleted: body.isDeleted})
         });
         if(!resource){
             resNotFound(res, "Resource not found");

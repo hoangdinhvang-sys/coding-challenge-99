@@ -1,5 +1,5 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
-import { createResourceBodySchema, resourceIdParamsSchema, updateResourceBodySchema } from "@presentation/v1/schemas/resource.schema";
+import { createResourceBodySchema, resourceIdParamsSchema, updateResourceBodySchema } from "@presentation/http/v1/schemas/resource.schema";
 import { z } from "zod";
 
 export const registerResourcePaths = (registry: OpenAPIRegistry) => {

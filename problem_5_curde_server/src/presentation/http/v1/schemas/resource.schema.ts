@@ -14,7 +14,8 @@ export const updateResourceBodySchema = z.object({
     name: z.string().min(1).transform((s) => s.trim()).optional(),
     type: z.string().uuid().optional(),
     description: z.string().nullable().optional(),
-    status: z.string().optional()
+    status: z.string().optional(),
+    isDeleted: z.boolean().optional()
 })
 
 export const resourceIdParamsSchema = z.object({
